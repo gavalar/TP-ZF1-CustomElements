@@ -41,7 +41,7 @@ class MyProject_Form_Address extends MyBase_Form
             $this->getElement('delivery_address')->setRequired();
             return parent::isValid($value, $context);
         }
-        return true;
+        return $valid;
     }
 
     public function isDeliveryAddressDifferent()

@@ -8,15 +8,15 @@ class MyBase_View_Helper_FormEmail extends Zend_View_Helper_FormText
        extract($info);
 
        $xhtml = $this->formText($name, $value, $attribs) .
-                    '<p class="' . $this->view->escape($id) . '" style="display:none;">OK</p>';
+                    '<span class="' . $this->view->escape($id) . '" style="display:none;">OK</span>';
 
        $xhtml .= '
         <script>
              $("#' . $this->view->escape($id) . '").blur(function() {
                 if($("#' . $this->view->escape($id) . '").val() != "") {
-                    $("p.' . $this->view->escape($id) . '").show();
+                    $("span.' . $this->view->escape($id) . '").show();
                 } else {
-                    $("p.' . $this->view->escape($id) . '").hide();
+                    $("span.' . $this->view->escape($id) . '").hide();
                 }
             });
         </script>';
